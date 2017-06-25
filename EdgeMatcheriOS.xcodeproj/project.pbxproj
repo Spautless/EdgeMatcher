@@ -13,6 +13,11 @@
 		5DBE49F81EFF73E100439C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE49F71EFF73E100439C1B /* Assets.xcassets */; };
 		5DBE49FB1EFF73E100439C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE49F91EFF73E100439C1B /* LaunchScreen.storyboard */; };
 		5DBE4A061EFF73E100439C1B /* EdgeMatcheriOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A051EFF73E100439C1B /* EdgeMatcheriOSTests.swift */; };
+		5DBE4A121EFF742A00439C1B /* EMPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A111EFF742A00439C1B /* EMPiece.swift */; };
+		5DBE4A141EFF743A00439C1B /* EMBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A131EFF743A00439C1B /* EMBoard.swift */; };
+		5DBE4A161EFF74AD00439C1B /* EMEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A151EFF74AD00439C1B /* EMEdge.swift */; };
+		5DBE4A181EFF74E200439C1B /* EMColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A171EFF74E200439C1B /* EMColor.swift */; };
+		5DBE4A1A1EFF770600439C1B /* EMIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE4A191EFF770600439C1B /* EMIndex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		5DBE4A011EFF73E100439C1B /* EdgeMatcheriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdgeMatcheriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBE4A051EFF73E100439C1B /* EdgeMatcheriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeMatcheriOSTests.swift; sourceTree = "<group>"; };
 		5DBE4A071EFF73E100439C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DBE4A111EFF742A00439C1B /* EMPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMPiece.swift; sourceTree = "<group>"; };
+		5DBE4A131EFF743A00439C1B /* EMBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMBoard.swift; sourceTree = "<group>"; };
+		5DBE4A151EFF74AD00439C1B /* EMEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMEdge.swift; sourceTree = "<group>"; };
+		5DBE4A171EFF74E200439C1B /* EMColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMColor.swift; sourceTree = "<group>"; };
+		5DBE4A191EFF770600439C1B /* EMIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMIndex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 		5DBE49EF1EFF73E100439C1B /* EdgeMatcheriOS */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE4A101EFF740800439C1B /* Models */,
 				5DBE49F01EFF73E100439C1B /* AppDelegate.swift */,
 				5DBE49F21EFF73E100439C1B /* ViewController.swift */,
 				5DBE49F41EFF73E100439C1B /* Main.storyboard */,
@@ -94,6 +105,18 @@
 				5DBE4A071EFF73E100439C1B /* Info.plist */,
 			);
 			path = EdgeMatcheriOSTests;
+			sourceTree = "<group>";
+		};
+		5DBE4A101EFF740800439C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE4A111EFF742A00439C1B /* EMPiece.swift */,
+				5DBE4A131EFF743A00439C1B /* EMBoard.swift */,
+				5DBE4A151EFF74AD00439C1B /* EMEdge.swift */,
+				5DBE4A171EFF74E200439C1B /* EMColor.swift */,
+				5DBE4A191EFF770600439C1B /* EMIndex.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBE49F31EFF73E100439C1B /* ViewController.swift in Sources */,
+				5DBE4A121EFF742A00439C1B /* EMPiece.swift in Sources */,
+				5DBE4A1A1EFF770600439C1B /* EMIndex.swift in Sources */,
+				5DBE4A141EFF743A00439C1B /* EMBoard.swift in Sources */,
 				5DBE49F11EFF73E100439C1B /* AppDelegate.swift in Sources */,
+				5DBE4A161EFF74AD00439C1B /* EMEdge.swift in Sources */,
+				5DBE4A181EFF74E200439C1B /* EMColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
