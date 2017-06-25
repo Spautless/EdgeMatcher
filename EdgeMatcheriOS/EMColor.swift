@@ -9,7 +9,8 @@
 import Foundation
 
 public struct EMColor {
-    let value: Int
+    public let value: Int
+    public static let none = EMColor(value: 0)
 }
 
 extension EMColor: Equatable {    

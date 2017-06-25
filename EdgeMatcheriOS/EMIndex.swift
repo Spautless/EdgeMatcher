@@ -9,8 +9,6 @@
 import Foundation
 
 public struct EMIndex {
-    let x: Int
-    let y: Int
-    
-    public static let zero = EMIndex(x: 0, y: 0)
+    public let x: Int
+    public let y: Int
 }

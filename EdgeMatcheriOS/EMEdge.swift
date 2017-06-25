@@ -9,7 +9,7 @@
 import Foundation
 
 public struct EMEdge {
-    let color: EMColor
+    public let color: EMColor
 }
 
 extension EMEdge: Equatable {

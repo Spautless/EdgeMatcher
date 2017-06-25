@@ -9,14 +9,22 @@
 import Foundation
 
 public class EMPiece {
-    public var index: EMIndex = .zero
+    public let identifier: Int
+    private let unrotatedEdges: [EMEdge]
     
-    private let unrotatedEdges: [EMEdge] = []
+    public init(_ id: Int, top: EMEdge, right: EMEdge, bottom: EMEdge, left: EMEdge) {
+        identifier = id
+        unrotatedEdges = [top, right, bottom, left]
+    }
 
-    var rotation = EMRotation.none
+    private var rotation = EMRotation.none
     
-    subscript(_ direction: EMDirection) -> EMEdge {
-        return 
+    public func rotate() {
+        rotation = rotation.rotated
+    }
+    
+    public subscript(_ direction: EMDirection) -> EMEdge {
+        return unrotatedEdges[(rotation.rawValue + direction.rawValue) % 4]
     }
 }
 
@@ -29,7 +37,7 @@ public enum EMDirection: Int {
 }
 
 public enum EMRotation: Int {
-    case none = 0
+    case none
     case clockwise
     case upsideDown
     case counterclockwise
