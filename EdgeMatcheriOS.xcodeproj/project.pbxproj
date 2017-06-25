@@ -110,11 +110,11 @@
 		5DBE4A101EFF740800439C1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5DBE4A111EFF742A00439C1B /* EMPiece.swift */,
 				5DBE4A131EFF743A00439C1B /* EMBoard.swift */,
-				5DBE4A151EFF74AD00439C1B /* EMEdge.swift */,
 				5DBE4A171EFF74E200439C1B /* EMColor.swift */,
+				5DBE4A151EFF74AD00439C1B /* EMEdge.swift */,
 				5DBE4A191EFF770600439C1B /* EMIndex.swift */,
+				5DBE4A111EFF742A00439C1B /* EMPiece.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 				5DBE4A0C1EFF73E100439C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DBE4A0D1EFF73E100439C1B /* Build configuration list for PBXNativeTarget "EdgeMatcheriOSTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				5DBE4A0F1EFF73E100439C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
