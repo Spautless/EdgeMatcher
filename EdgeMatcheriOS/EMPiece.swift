@@ -10,7 +10,10 @@ import Foundation
 
 public class EMPiece {
     public let identifier: Int
-    private let unrotatedEdges: [EMEdge]
+    
+    public var index: EMIndex?
+    
+    fileprivate let unrotatedEdges: [EMEdge]
     
     public init(_ id: Int, top: EMEdge, right: EMEdge, bottom: EMEdge, left: EMEdge) {
         identifier = id
@@ -25,6 +28,35 @@ public class EMPiece {
     
     public subscript(_ direction: EMDirection) -> EMEdge {
         return unrotatedEdges[(rotation.rawValue + direction.rawValue) % 4]
+    }
+}
+
+extension EMPiece: Equatable {
+    public static func == (lhs: EMPiece, rhs: EMPiece) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}
+
+// MARK :- Helpers
+extension EMPiece {
+    public var isCorner: Bool {
+        for x in 0..<3 {
+            if unrotatedEdges[x].color == .none, unrotatedEdges[x+1] == .none {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    public var isEdge: Bool {
+        for edge in unrotatedEdges {
+            if edge.color == .none {
+                return true
+            }
+        }
+        
+        return false
     }
 }
 

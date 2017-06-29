@@ -24,6 +24,9 @@ class EdgeMatcheriOSTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let board = EMBoard(width: 3, height: 5)
+        print("\(board[EMIndex(x: 2, y: 4)])")
     }
     
     func testPerformanceExample() {
