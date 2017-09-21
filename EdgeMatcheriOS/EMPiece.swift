@@ -10,9 +10,7 @@ import Foundation
 
 public class EMPiece {
     public let identifier: Int
-    
     public var index: EMIndex?
-    
     fileprivate let unrotatedEdges: [EMEdge]
     
     public init(_ id: Int, top: EMEdge, right: EMEdge, bottom: EMEdge, left: EMEdge) {
@@ -57,24 +55,5 @@ extension EMPiece {
         }
         
         return false
-    }
-}
-
-
-public enum EMDirection: Int {
-    case up
-    case right
-    case down
-    case left
-}
-
-public enum EMRotation: Int {
-    case none
-    case clockwise
-    case upsideDown
-    case counterclockwise
-    
-    var rotated: EMRotation {
-        return EMRotation(rawValue: (rawValue + 1) % 4)!
     }
 }

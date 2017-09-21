@@ -35,10 +35,11 @@ public class EMBoard {
     }
     
     public func pop() -> EMPiece? {
-        if let piece = stack.popLast(), let index = piece.index {
-            board[index.x][index.y] = nil
+        guard let piece = stack.popLast(), let index = piece.index else {
+            return nil
         }
 
-        return nil
+        board[index.x][index.y] = nil
+        return piece
     }
 }
