@@ -19,7 +19,27 @@ public struct EMEdge {
 
 public struct EMColor {
     public let value: Int
-    public static let none = EMColor(value: 0)
+    public static let none = EMColor(0)
+    
+    init(_ value: Int) {
+        self.value = value
+    }
+}
+
+extension EMColor {
+    var edge: EMEdge {
+        return EMEdge(color: self)
+    }
+}
+
+extension Int {
+    var color: EMColor {
+        return EMColor(self)
+    }
+    
+    var edge: EMEdge {
+        return color.edge
+    }
 }
 
 public enum EMDirection: Int {

@@ -39,7 +39,7 @@ extension EMPiece: Equatable {
 extension EMPiece {
     public var isCorner: Bool {
         for x in 0..<3 {
-            if unrotatedEdges[x].color == .none, unrotatedEdges[x+1] == .none {
+            if unrotatedEdges[x].color == .none, unrotatedEdges[x+1].color == .none {
                 return true
             }
         }
@@ -53,7 +53,7 @@ extension EMPiece {
                 return true
             }
         }
-        
+
         return false
     }
 }
