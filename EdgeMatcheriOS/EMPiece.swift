@@ -24,6 +24,22 @@ public class EMPiece {
         rotation = rotation.rotated
     }
     
+    var up: EMEdge {
+        return self[.up]
+    }
+    
+    var right: EMEdge {
+        return self[.right]
+    }
+    
+    var down: EMEdge {
+        return self[.down]
+    }
+    
+    var left: EMEdge {
+        return self[.left]
+    }
+    
     public subscript(_ direction: EMDirection) -> EMEdge {
         return unrotatedEdges[(rotation.rawValue + direction.rawValue) % 4]
     }
@@ -35,11 +51,23 @@ extension EMPiece: Equatable {
     }
 }
 
+extension EMPiece: CustomStringConvertible {
+    public var description: String {
+        return "~~EMPiece id=\(identifier)~~\nU:\(self[EMDirection.up]) R:\(self[EMDirection.right]) D:\(self[EMDirection.down]) L:\(self[EMDirection.left])"
+    }
+}
+
+extension Int {
+    var edge: EMEdge {
+        return EMEdge(value: self)
+    }
+}
+
 // MARK :- Helpers
 extension EMPiece {
     public var isCorner: Bool {
         for x in 0..<3 {
-            if unrotatedEdges[x].color == .none, unrotatedEdges[x+1].color == .none {
+            if unrotatedEdges[x] == .none, unrotatedEdges[x+1] == .none {
                 return true
             }
         }
@@ -49,7 +77,7 @@ extension EMPiece {
     
     public var isEdge: Bool {
         for edge in unrotatedEdges {
-            if edge.color == .none {
+            if edge == .none {
                 return true
             }
         }

@@ -13,32 +13,16 @@ public struct EMIndex {
     public let y: Int
 }
 
+public typealias EMValue = Int
 public struct EMEdge {
-    public let color: EMColor
-}
-
-public struct EMColor {
-    public let value: Int
-    public static let none = EMColor(0)
+    public let value: EMValue
     
-    init(_ value: Int) {
-        self.value = value
-    }
+    public static let none = EMEdge(value: 0)
 }
 
-extension EMColor {
-    var edge: EMEdge {
-        return EMEdge(color: self)
-    }
-}
-
-extension Int {
-    var color: EMColor {
-        return EMColor(self)
-    }
-    
-    var edge: EMEdge {
-        return color.edge
+extension EMEdge: CustomStringConvertible {
+    public var description: String {
+        return "\(value)"
     }
 }
 
@@ -72,12 +56,6 @@ extension EMIndex: Equatable {
 
 extension EMEdge: Equatable {
     static public func ==(lhs: EMEdge, rhs: EMEdge) -> Bool {
-        return lhs.color == rhs.color
-    }
-}
-
-extension EMColor: Equatable {
-    static public func ==(lhs: EMColor, rhs: EMColor) -> Bool {
         return lhs.value == rhs.value
     }
 }

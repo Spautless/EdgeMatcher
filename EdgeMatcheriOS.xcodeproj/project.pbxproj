@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D50ADBF1FF380D700EB9497 /* ChristmasPuzzle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D50ADBE1FF380D700EB9497 /* ChristmasPuzzle.json */; };
+		5D50ADC11FF38B2100EB9497 /* EMPieceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50ADC01FF38B2100EB9497 /* EMPieceParser.swift */; };
+		5D50ADC41FF3A23C00EB9497 /* Backtracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D50ADC31FF3A23B00EB9497 /* Backtracer.swift */; };
 		5DA9B7D71F80904200D6AF08 /* EMPieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9B7D61F80904200D6AF08 /* EMPieceTests.swift */; };
 		5DBE49F11EFF73E100439C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE49F01EFF73E100439C1B /* AppDelegate.swift */; };
 		5DBE49F31EFF73E100439C1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE49F21EFF73E100439C1B /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D50ADBE1FF380D700EB9497 /* ChristmasPuzzle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChristmasPuzzle.json; sourceTree = "<group>"; };
+		5D50ADC01FF38B2100EB9497 /* EMPieceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPieceParser.swift; sourceTree = "<group>"; };
+		5D50ADC31FF3A23B00EB9497 /* Backtracer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backtracer.swift; sourceTree = "<group>"; };
 		5DA9B7D61F80904200D6AF08 /* EMPieceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPieceTests.swift; sourceTree = "<group>"; };
 		5DBE49ED1EFF73E100439C1B /* EdgeMatcheriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdgeMatcheriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBE49F01EFF73E100439C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D50ADBD1FF3809D00EB9497 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				5D50ADBE1FF380D700EB9497 /* ChristmasPuzzle.json */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		5D50ADC21FF3A22A00EB9497 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				5D50ADC31FF3A23B00EB9497 /* Backtracer.swift */,
+			);
+			name = Algorithms;
+			sourceTree = "<group>";
+		};
 		5DBE49E41EFF73E100439C1B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 		5DBE49EF1EFF73E100439C1B /* EdgeMatcheriOS */ = {
 			isa = PBXGroup;
 			children = (
+				5D50ADC21FF3A22A00EB9497 /* Algorithms */,
+				5D50ADBD1FF3809D00EB9497 /* Fixtures */,
 				5DBE4A101EFF740800439C1B /* Models */,
 				5DBE49F01EFF73E100439C1B /* AppDelegate.swift */,
 				5DBE49F21EFF73E100439C1B /* ViewController.swift */,
@@ -112,6 +136,7 @@
 				5DBE4A131EFF743A00439C1B /* EMBoard.swift */,
 				5DBE4A111EFF742A00439C1B /* EMPiece.swift */,
 				5DDA90231F739247006F3909 /* EMDefines.swift */,
+				5D50ADC01FF38B2100EB9497 /* EMPieceParser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -201,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D50ADBF1FF380D700EB9497 /* ChristmasPuzzle.json in Resources */,
 				5DBE49FB1EFF73E100439C1B /* LaunchScreen.storyboard in Resources */,
 				5DBE49F81EFF73E100439C1B /* Assets.xcassets in Resources */,
 				5DBE49F61EFF73E100439C1B /* Main.storyboard in Resources */,
@@ -221,11 +247,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D50ADC41FF3A23C00EB9497 /* Backtracer.swift in Sources */,
 				5DBE49F31EFF73E100439C1B /* ViewController.swift in Sources */,
 				5DBE4A121EFF742A00439C1B /* EMPiece.swift in Sources */,
 				5DDA90241F739247006F3909 /* EMDefines.swift in Sources */,
 				5DBE4A141EFF743A00439C1B /* EMBoard.swift in Sources */,
 				5DBE49F11EFF73E100439C1B /* AppDelegate.swift in Sources */,
+				5D50ADC11FF38B2100EB9497 /* EMPieceParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +436,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Steve.EdgeMatcheriOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EdgeMatcheriOS.app/EdgeMatcheriOS";
 			};
@@ -423,7 +451,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Steve.EdgeMatcheriOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EdgeMatcheriOS.app/EdgeMatcheriOS";
 			};

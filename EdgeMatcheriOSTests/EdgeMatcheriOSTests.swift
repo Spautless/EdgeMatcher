@@ -20,7 +20,15 @@ class EdgeMatcheriOSTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
+    
+    func testJsonParser() {
+        let pieces = Parser.getPieces(fromFile: "ChristmasPuzzle", withExtension: "json")
+        for piece in pieces {
+            print(piece)
+        }
+        
+    }
+    
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
 //        self.measure {
