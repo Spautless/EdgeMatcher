@@ -11,6 +11,8 @@ import Foundation
 public struct EMIndex {
     public let x: Int
     public let y: Int
+    
+    public static let zero = EMIndex(x: 0, y: 0)
 }
 
 public typealias EMValue = Int

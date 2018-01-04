@@ -11,6 +11,7 @@ import Foundation
 public protocol EMBoard: class {
     var board: [[EMPiece?]] { get set }
     var stack: [EMPiece] { get set }
+    var next: EMIndex { get set }
     
     func edgesMatch(e1: EMEdge, e2: EMEdge) -> Bool
 }
@@ -33,10 +34,7 @@ public extension EMBoard {
     }
     
     public func isValidPush(_ piece: EMPiece) -> Bool {
-        guard let index = piece.index else {
-            assertionFailure("Can't push a piece without its index set!")
-            return false
-        }
+        let index = next
         
         let isBounded = index.x >= 0 && index.y >= 0 && index.x < width && index.y < height
         if !isBounded {
@@ -71,23 +69,45 @@ public extension EMBoard {
     }
 
     public func push(_ piece: EMPiece) {
-        board[piece.index!.x][piece.index!.y] = piece
+        board[next.x][next.y] = piece
         stack.append(piece)
+        increaseNext()
     }
     
+    @discardableResult
     public func pop() -> EMPiece? {
-        guard let piece = stack.popLast(), let index = piece.index else {
+        guard let piece = stack.popLast() else {
             return nil
         }
-        
-        board[index.x][index.y] = nil
+        decreaseNext()
+        board[next.x][next.y] = nil
         return piece
+    }
+    
+    //TODO: Make these customizable for potential improvements
+    private func increaseNext() {
+        let nextX = (next.x + 1) % width
+        if nextX == 0 {
+            next = EMIndex(x: nextX, y: next.y + 1)
+        } else {
+            next = EMIndex(x: nextX, y: next.y)
+        }
+    }
+    
+    private func decreaseNext() {
+        let nextX = next.x - 1
+        if nextX < 0 {
+            next = EMIndex(x: width - 1, y: next.y - 1)
+        } else {
+            next = EMIndex(x: nextX, y: next.y)
+        }
     }
 }
 
 public class EternityPuzzle: EMBoard {
     public var board: [[EMPiece?]]
     public var stack: [EMPiece] = []
+    public var next: EMIndex = .zero
     
     init(width: Int, height: Int) {
         board = Array(repeating: Array(repeating: nil, count: height), count: width)
@@ -101,6 +121,7 @@ public class EternityPuzzle: EMBoard {
 public class ChristmasPuzzle: EMBoard {
     public var board: [[EMPiece?]]
     public var stack: [EMPiece] = []
+    public var next: EMIndex = .zero
     
     init(width: Int, height: Int) {
         board = Array(repeating: Array(repeating: nil, count: height), count: width)

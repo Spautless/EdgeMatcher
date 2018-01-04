@@ -10,7 +10,6 @@ import Foundation
 
 public class EMPiece {
     public let identifier: Int
-    public var index: EMIndex?
     fileprivate let unrotatedEdges: [EMEdge]
     
     public init(_ id: Int, top: EMEdge, right: EMEdge, bottom: EMEdge, left: EMEdge) {

@@ -23,10 +23,14 @@ class EdgeMatcheriOSTests: XCTestCase {
     
     func testJsonParser() {
         let pieces = Parser.getPieces(fromFile: "ChristmasPuzzle", withExtension: "json")
-        for piece in pieces {
-            print(piece)
-        }
+        assert(pieces.count == 9)
+    }
+    
+    func testChristmasPuzzle() {
+        let pieces = Parser.getPieces(fromFile: "ChristmasPuzzle", withExtension: "json")
+        let board = ChristmasPuzzle(width: 3, height: 3)
         
+        backtrack(board: board, pieces: pieces)
     }
     
 //    func testPerformanceExample() {
