@@ -32,7 +32,7 @@ private func internalBacktrack(board: EMBoard, remainingPieces: [EMPiece]) -> EM
         return nil
     }
     
-    //more than 1 piece remains. interate through the remainingPieces to see if there's a valid push
+    //more than 1 piece remains. iterate through the remainingPieces to see if there's a valid push
     //and push it, then recurse with the remaining pieces. if the result is nil, continue looking through
     //remaining pieces and trying again until you've exhausted the list, returning nil if that is the case
     for piece in remainingPieces {
